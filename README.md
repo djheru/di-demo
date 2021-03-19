@@ -99,3 +99,41 @@ Some next steps:
 "amplify push" will build all your local backend resources and provision it in the cloud
 "amplify publish" will build all your local backend and frontend resources (if you have hosting category added) and provision it in the cloud
 ```
+
+### Deploy Authentication Service
+
+```bash
+amplify push
+```
+
+### Generated Output
+
+```
+✔ Successfully pulled backend environment dev from the cloud.
+
+Current Environment: dev
+
+| Category | Resource name                       | Operation | Provider plugin   |
+| -------- | ----------------------------------- | --------- | ----------------- |
+| Function | dealerships45a69910PostConfirmation | Create    | awscloudformation |
+| Auth     | dealerships45a69910                 | Create    | awscloudformation |
+? Are you sure you want to continue? Yes
+⠏ Updating resources in the cloud. This may take a few minutes...
+
+...more output
+
+UPDATE_COMPLETE amplify-dealerships-dev-100801 AWS::CloudFormation::Stack Thu Mar 18 2021 10:45:34 GMT-0700 (Mountain Standard Time) 
+✔ All resources are updated in the cloud
+```
+
+### Cognito User Pool
+
+- https://console.aws.amazon.com/cognito/users/?region=us-east-1 and select the user pool with "dealer" as part of the generated name
+- View available attributes
+- View password policies
+- View triggers
+- View MFA setup
+- View Analytics
+  - https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-pinpoint-integration.html
+  - "Amazon Pinpoint is an AWS service that you can use to engage with your customers across multiple messaging channels. You can use Amazon Pinpoint to send push notifications, emails, SMS text messages, or voice messages."
+- View Identity Providers

@@ -14,7 +14,9 @@
     "categories": {
       "function": {
         "dealerships2fd60623PostConfirmation": {
-          "GROUP": "Admin"
+          "GROUP": "Admin",
+          "deploymentBucketName": "amplify-dealerships-dev-01120-deployment",
+          "s3Key": "amplify-builds/dealerships2fd60623PostConfirmation-694a665045544b74324e-build.zip"
         }
       },
       "auth": {
