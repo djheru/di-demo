@@ -28,7 +28,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-dealerships-dev-01120-deployment/amplify-cfn-templates/function/dealerships2fd60623PostConfirmation-cloudformation-template.json",
         "logicalId": "functiondealerships2fd60623PostConfirmation"
       },
-      "lastPushTimeStamp": "2021-03-19T07:19:51.699Z",
+      "lastPushTimeStamp": "2021-03-19T08:00:25.857Z",
       "output": {
         "Region": "us-east-1",
         "Arn": "arn:aws:lambda:us-east-1:205375198116:function:dealerships2fd60623PostConfirmation-dev",
@@ -58,7 +58,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-dealerships-dev-01120-deployment/amplify-cfn-templates/auth/dealerships2fd60623-cloudformation-template.yml",
         "logicalId": "authdealerships2fd60623"
       },
-      "lastPushTimeStamp": "2021-03-19T07:19:51.699Z",
+      "lastPushTimeStamp": "2021-03-19T08:00:25.859Z",
       "output": {
         "UserPoolId": "us-east-1_Zzx1VCIPJ",
         "AppClientIDWeb": "4lca0862jre9698op2ss24eupl",
@@ -91,8 +91,17 @@
               }
             }
           ]
-        }
-      }
+        },
+        "GraphQLAPIIdOutput": "gpzdciwwufb2ldbrgd54khoyiq",
+        "GraphQLAPIEndpointOutput": "https://yi4exnb6djb7tgnzouou4w66vm.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-v2uoih462neqde57lx6qzlnmvq"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-dealerships-dev-01120-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apidealerships"
+      },
+      "lastPushTimeStamp": "2021-03-19T08:00:26.677Z",
+      "lastPushDirHash": "CZIdSo/MBJ0TGJQiiXKo8jVkzgc="
     }
   }
 }

@@ -243,3 +243,44 @@ type Dealership
 - @searchable: Makes your data searchable by streaming it to Elasticsearch
 - @versioned: Defines the versioning and conflict resolution strategy for an @model type
 - Create your own - https://docs.amplify.aws/cli/plugins/authoring#authoring-custom-graphql-transformers--directives
+
+### Generate GraphQL Resources
+
+```bash 
+amplify push
+```
+
+#### Prompts and Generated Resources
+
+```
+✔ Successfully pulled backend environment dev from the cloud.
+
+Current Environment: dev
+
+| Category | Resource name                       | Operation | Provider plugin   |
+| -------- | ----------------------------------- | --------- | ----------------- |
+| Api      | dealershipsapi                      | Create    | awscloudformation |
+| Function | dealerships8418484bPostConfirmation | No Change | awscloudformation |
+| Auth     | dealerships8418484b                 | No Change | awscloudformation |
+? Are you sure you want to continue? Yes
+
+GraphQL schema compiled successfully.
+
+Edit your schema at /Users/philipdamra/Workspace/_sandbox/appsync-amplify/di-demo2/dealerships/amplify/backend/api/dealershipsapi/schema.graphql or place .graphql files in a directory at /Users/philipdamra/Workspace/_sandbox/appsync-amplify/di-demo2/dealerships/amplify/backend/api/dealershipsapi/schema
+? Do you want to generate code for your newly created GraphQL API Yes
+? Choose the code generation language target javascript
+? Enter the file name pattern of graphql queries, mutations and subscriptions src/graphql/**/*.js
+? Do you want to generate/update all possible GraphQL operations - queries, mutations and subscriptions Yes
+? Enter maximum statement depth [increase from default if your schema is deeply nested] 2
+⠏ Updating resources in the cloud. This may take a few minutes...
+
+UPDATE_COMPLETE amplify-dealerships-dev-144647              AWS::CloudFormation::Stack Thu Mar 18 2021 15:43:15 GMT-0700 (Mountain Standard Time) 
+UPDATE_COMPLETE functiondealerships8418484bPostConfirmation AWS::CloudFormation::Stack Thu Mar 18 2021 15:43:14 GMT-0700 (Mountain Standard Time) 
+UPDATE_COMPLETE authdealerships8418484b                     AWS::CloudFormation::Stack Thu Mar 18 2021 15:43:13 GMT-0700 (Mountain Standard Time) 
+✔ Generated GraphQL operations successfully and saved at src/graphql
+✔ All resources are updated in the cloud
+
+GraphQL endpoint: https://cezfo6x26jhfbjesyqucmyr3pq.appsync-api.us-east-1.amazonaws.com/graphql
+GraphQL API KEY: da2-fh57zc7y7rc6fb5nx7xgp5zrk4
+```
+
