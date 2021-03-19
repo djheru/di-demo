@@ -58,3 +58,44 @@ Some next steps:
 Pro tip:
 Try "amplify add api" to create a backend API and then "amplify publish" to deploy everything
 ```
+
+## Add Authentication Service
+
+```bash
+# This command will prompt you with questions to configure the auth setup
+amplify add auth
+```
+
+### Amplify Add Auth Prompts
+
+```
+Using service: Cognito, provided by: awscloudformation
+ 
+ The current configured provider is Amazon Cognito. 
+ 
+ Do you want to use the default authentication and security configuration? Default configuration
+ Warning: you will not be able to edit these selections. 
+ How do you want users to be able to sign in? Username
+ Do you want to configure advanced settings? Yes, I want to make some additional changes.
+ Warning: you will not be able to edit these selections. 
+ What attributes are required for signing up? Email
+ Do you want to enable any of the following capabilities? Add User to Group
+? Enter the name of the group to which users will be added. Admin
+Successfully added resource dealerships45a69910PostConfirmation locally.
+
+Next steps:
+Check out sample function code generated in <project-dir>/amplify/backend/function/dealerships45a69910PostConfirmation/src
+"amplify function build" builds all of your functions currently in the project
+"amplify mock function <functionName>" runs your function locally
+"amplify push" builds all of your local backend resources and provisions them in the cloud
+"amplify publish" builds all of your local backend and front-end resources (if you added hosting category) and provisions them in the cloud
+Successfully added the Lambda function locally
+? Do you want to edit your add-to-group function now? Yes
+Please edit the file in your editor: /Users/philipdamra/Workspace/_sandbox/appsync-amplify/di-demo2/dealerships/amplify/backend/function/dealerships45a69910PostConfirmation/src/add-to-group.js
+? Press enter to continue 
+Successfully added auth resource dealerships45a69910 locally
+
+Some next steps:
+"amplify push" will build all your local backend resources and provision it in the cloud
+"amplify publish" will build all your local backend and frontend resources (if you have hosting category added) and provision it in the cloud
+```

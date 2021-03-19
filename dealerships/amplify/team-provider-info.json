@@ -10,6 +10,16 @@
       "StackName": "amplify-dealerships-dev-01120",
       "StackId": "arn:aws:cloudformation:us-east-1:205375198116:stack/amplify-dealerships-dev-01120/4fb26730-8882-11eb-8548-0ac12714be3f",
       "AmplifyAppId": "d22te1znsh3zil"
+    },
+    "categories": {
+      "function": {
+        "dealerships2fd60623PostConfirmation": {
+          "GROUP": "Admin"
+        }
+      },
+      "auth": {
+        "dealerships2fd60623": {}
+      }
     }
   }
 }
