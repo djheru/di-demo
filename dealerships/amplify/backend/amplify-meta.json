@@ -1,0 +1,73 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-dealerships-dev-01120-authRole",
+      "UnauthRoleArn": "arn:aws:iam::205375198116:role/amplify-dealerships-dev-01120-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::205375198116:role/amplify-dealerships-dev-01120-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-dealerships-dev-01120-deployment",
+      "UnauthRoleName": "amplify-dealerships-dev-01120-unauthRole",
+      "StackName": "amplify-dealerships-dev-01120",
+      "StackId": "arn:aws:cloudformation:us-east-1:205375198116:stack/amplify-dealerships-dev-01120/4fb26730-8882-11eb-8548-0ac12714be3f",
+      "AmplifyAppId": "d22te1znsh3zil"
+    }
+  },
+  "function": {
+    "dealerships2fd60623PostConfirmation": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2021-03-19T07:16:13.337Z",
+      "lastPackageTimeStamp": "2021-03-19T07:16:13.467Z",
+      "distZipFilename": "dealerships2fd60623PostConfirmation-694a665045544b74324e-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-dealerships-dev-01120-deployment",
+        "s3Key": "amplify-builds/dealerships2fd60623PostConfirmation-694a665045544b74324e-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-dealerships-dev-01120-deployment/amplify-cfn-templates/function/dealerships2fd60623PostConfirmation-cloudformation-template.json",
+        "logicalId": "functiondealerships2fd60623PostConfirmation"
+      },
+      "lastPushTimeStamp": "2021-03-19T07:19:51.699Z",
+      "output": {
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:205375198116:function:dealerships2fd60623PostConfirmation-dev",
+        "Name": "dealerships2fd60623PostConfirmation-dev",
+        "LambdaExecutionRole": "dealerships2fd60623PostConfirmation-dev"
+      },
+      "lastPushDirHash": "nCpM+OhP/ZnCC6wuWyr5a28joyY="
+    }
+  },
+  "auth": {
+    "dealerships2fd60623": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "dealerships2fd60623PostConfirmation",
+          "triggerProvider": "Cognito",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        }
+      ],
+      "customAuth": false,
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-dealerships-dev-01120-deployment/amplify-cfn-templates/auth/dealerships2fd60623-cloudformation-template.yml",
+        "logicalId": "authdealerships2fd60623"
+      },
+      "lastPushTimeStamp": "2021-03-19T07:19:51.699Z",
+      "output": {
+        "UserPoolId": "us-east-1_Zzx1VCIPJ",
+        "AppClientIDWeb": "4lca0862jre9698op2ss24eupl",
+        "AppClientID": "t11vv34qhl4rolm3otpibmfeq",
+        "IdentityPoolId": "us-east-1:3291dcad-43c7-448b-9be6-e6f9f7ec8bb9",
+        "IdentityPoolName": "dealerships2fd60623_identitypool_2fd60623__dev",
+        "UserPoolName": "dealerships2fd60623_userpool_2fd60623"
+      },
+      "lastPushDirHash": "97mavmALwYZaRnfQMSTttW2H3G8="
+    }
+  }
+}
