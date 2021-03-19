@@ -168,3 +168,78 @@ npm start
 - Now when you go to http://localhost:3000/#/protected, you should see your user details
 - Explore the "reset password" functionality if you like
 - Play around with the colors in index.css to see how you can theme the Amplify UI
+
+## Add a GraphQL API
+
+```bash
+amplify add api
+```
+
+### Amplify CLI Prompts
+
+```
+? Please select from one of the below mentioned services: GraphQL
+? Provide API name: dealershipsapi
+? Choose the default authorization type for the API Amazon Cognito User Pool
+Use a Cognito user pool configured as a part of this project.
+? Do you want to configure advanced settings for the GraphQL API Yes, I want to make some additional changes.
+? Configure additional auth types? Yes
+? Choose the additional authorization types you want to configure for the API API key
+API key configuration
+? Enter a description for the API key: public
+? After how many days from now the API key should expire (1-365): 7
+? Configure conflict detection? No
+? Do you have an annotated GraphQL schema? No
+? Choose a schema template: Single object with fields (e.g., “Todo” with ID, name, description)
+
+The following types do not have '@auth' enabled. Consider using @auth with @model
+         - Todo
+Learn more about @auth here: https://docs.amplify.aws/cli/graphql-transformer/auth
+
+
+GraphQL schema compiled successfully.
+
+Edit your schema at /Users/philipdamra/Workspace/_sandbox/appsync-amplify/di-demo2/dealerships/amplify/backend/api/dealershipsapi/schema.graphql or place .graphql files in a directory at /Users/philipdamra/Workspace/_sandbox/appsync-amplify/di-demo2/dealerships/amplify/backend/api/dealershipsapi/schema
+? Do you want to edit the schema now? Yes
+Please edit the file in your editor: /Users/philipdamra/Workspace/_sandbox/appsync-amplify/di-demo2/dealerships/amplify/backend/api/dealershipsapi/schema.graphql
+Successfully added resource dealershipsapi locally
+
+Some next steps:
+"amplify push" will build all your local backend resources and provision it in the cloud
+"amplify publish" will build all your local backend and frontend resources (if you have hosting category added) and provision it in the cloud
+```
+
+### Amplify GraphQL API Schema
+
+```graphql
+type Dealership 
+@model
+@auth(rules:[
+  { allow: public, provider: apiKey, operations: [read] },
+  { allow: groups, groups: ["Admin"], operations: [create, delete, update]}
+]) {
+  id: ID!
+  name: String!
+  telephone: String!
+  contactName: String!
+  streetAddress: String!
+  city: String!
+  state: String!
+  postalCode: String!
+  clientId: String!
+}
+```
+
+#### Amplify GraphQL Schema Directives
+
+- https://docs.amplify.aws/cli/graphql-transformer/directives
+- @model: Defines top level object types in your API that are backed by Amazon DynamoDB
+- @key: Configures custom index structures for @model types
+- @auth: Defines authorization rules for your @model types and fields
+- @connection: Defines 1:1, 1:M, and N:M relationships between @model types
+- @function: Configures a Lambda function resolvers for a field
+- @http: Configures an HTTP resolver for a field
+- @predictions: Queries an orchestration of AI/ML services such as Amazon Rekognition, Amazon Translate, and/or Amazon Polly
+- @searchable: Makes your data searchable by streaming it to Elasticsearch
+- @versioned: Defines the versioning and conflict resolution strategy for an @model type
+- Create your own - https://docs.amplify.aws/cli/plugins/authoring#authoring-custom-graphql-transformers--directives

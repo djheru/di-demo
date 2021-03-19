@@ -69,5 +69,30 @@
       },
       "lastPushDirHash": "97mavmALwYZaRnfQMSTttW2H3G8="
     }
+  },
+  "api": {
+    "dealerships": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authdealerships2fd60623"
+            }
+          },
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "API_KEY",
+              "apiKeyConfig": {
+                "apiKeyExpirationDays": 7,
+                "description": "public"
+              }
+            }
+          ]
+        }
+      }
+    }
   }
 }

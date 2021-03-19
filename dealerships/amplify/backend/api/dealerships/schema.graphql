@@ -1,0 +1,16 @@
+type Dealership 
+@model
+@auth(rules:[
+  { allow: public, provider: apiKey, operations: [read] },
+  { allow: groups, groups: ["Admin"], operations: [create, delete, update]}
+]) {
+  id: ID!
+  name: String!
+  telephone: String!
+  contactName: String!
+  streetAddress: String!
+  city: String!
+  state: String!
+  postalCode: String!
+  clientId: String!
+}
