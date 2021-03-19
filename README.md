@@ -284,3 +284,8 @@ GraphQL endpoint: https://cezfo6x26jhfbjesyqucmyr3pq.appsync-api.us-east-1.amazo
 GraphQL API KEY: da2-fh57zc7y7rc6fb5nx7xgp5zrk4
 ```
 
+## Deploying the React App
+
+```bash
+amplify publish
+```
