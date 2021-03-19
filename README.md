@@ -137,3 +137,34 @@ UPDATE_COMPLETE amplify-dealerships-dev-100801 AWS::CloudFormation::Stack Thu Ma
   - https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-pinpoint-integration.html
   - "Amazon Pinpoint is an AWS service that you can use to engage with your customers across multiple messaging channels. You can use Amazon Pinpoint to send push notifications, emails, SMS text messages, or voice messages."
 - View Identity Providers
+
+## Add React Layout and Components
+
+```bash
+# Create the files we'll need
+cd src && touch Container.js Nav.js Profile.js Protected.js Public.js Router.js protectedRoute.js
+```
+
+### Component Descriptions
+
+- Container.js - Wrapper component to apply some basic styles
+- Nav.js - Navigation UI
+- Profile.js - Just a simple component to display details from logged in users, or a login form for unauthenticated users
+- Protected.js - An "Admin" page, only accessible to logged-in users
+- Public.js - A public page, of course
+- Router.js - Contains the routing logic
+- protectedRoute.js - This will contain a reusable hook to protect pages that require authentication
+
+### Try it Out
+
+```bash
+npm start
+```
+
+- Navigate to http://localhost:3000/#/
+- Attempt to navigate to http://localhost:3000/#/protected - See the redirect back to the login form?
+- Create a new account and check your email for the verification code
+- If you used your `@dealerinspire.com` address, you are an admin
+- Now when you go to http://localhost:3000/#/protected, you should see your user details
+- Explore the "reset password" functionality if you like
+- Play around with the colors in index.css to see how you can theme the Amplify UI
